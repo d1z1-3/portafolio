@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="FDZ"/>
+    <meta name="description" content="Practica html-css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/parte5/stylesp5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" size="32x32" href="/imgs/img-title.jpg">
+    <script src="https://kit.fontawesome.com/9a892fcb5a.js" crossorigin="anonymous"></script>
+    <title>Planificador de tareas</title>
+</head>
+<body>
+    <header class="header" id="navbar">
+        <div class="logo">
+            <a href="\parte 4\p-web.html">
+                <img src="/imgs/univallelogo.png">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="menu">
+             <li><i class="fa-solid fa-house" style="color: #333;"></i> <a href="\parte 4\p-web.html">Inicio</a></li>
+             <li><i class="fa-solid fa-id-card-clip" style="color: #030000;"></i> <a href="\parte 3\index2p3.html">Sobre mi</a></li>
+             <li><i class="fa-solid fa-id-badge" style="color: #030000;"></i> <a href="/parte 3/indexp3.html">Aprendizajes</a></li>
+             <li><i class="fa-brands fa-github" style="color: #030000;"></i> <a href="/parte 4/index2p4.html">Proyectos</a></li>
+             <li><i class="fa-solid fa-address-book" style="color: #0c0000;"></i> <a href="/parte 4/p-web.html#contacto">Contacto</a></li>
+         </nav>
+    </header>
+
+    <main id="contenido-p">
+        <div class="content-template">
+            <div class="text-section">
+                <h2>Planificador de tareas</h2>
+                <p class="orange-text">es una herramienta diseñada para ayudarte a organizar tu día de manera eficiente y sin complicaciones. Este aplicativo convierte tus tareas diarias en una agenda personalizada, distribuyendo cada actividad según su prioridad y el tiempo disponible en tu jornada.
+
+                </p>
+                <p class="orange-text">
+                    Con un diseño intuitivo y colores relajantes, esta aplicación no solo facilita tu planificación, sino que también transforma la experiencia de gestionar tu tiempo en algo visualmente agradable.
+                </p>
+                <p class="cheers">Espero que te sea util!</p>
+            </div>
+            
+            <div class="image-section">
+                <div class="placeholder-image">
+                    <img src="/imgs/codigoplani.gif" width="520" height="400"> 
+                </div>
+            </div>
+        </div>
+
+        <section class="services-section">
+            <h2 class="services-title">¿Cómo funciona el planificador?</h2>
+            <p class="services-subtitle">Solo sigue estos 3 sencillos pasos!</p>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="/imgs/paso1plani.png" alt="Paso 1" class="service-image">
+                    <h3>Paso 1</h3>
+                    <p class="service-description">
+                        En el primer bloque de texto ingresa las tareas a realizar, 1 tarea por linea.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <img src="/imgs/paso2plani.png" alt="Paso 2" class="service-image">
+                    <h3>Paso 2</h3>
+                    <p class="service-description">
+                        En el segundo bloque de texto ingresa el orden de prioridad de las tareas (la prioridad va de números mas grandes, mayor prioridad, números pequeños, menor prioridad)
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <img src="/imgs/paso3plani.png" alt="Paso 3" class="service-image">
+                    <h3>Paso 3</h3>
+                    <p class="service-description">
+                        Completados los pasos anteriores solo haz click en "generar agenda"  ¡disfruta!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Todos los derechos de esta pagina reservados a Felipe Ramirez</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let prevScrollpos = window.pageYOffset;
+            const navbar = document.getElementById("navbar");
+            let isMouseOver = false;
+
+            navbar.addEventListener("mouseenter", function() {
+                isMouseOver = true;
+                navbar.style.top = "0";
+            });
+
+            navbar.addEventListener("mouseleave", function() {
+                isMouseOver = false;
+                if (window.pageYOffset > 100) {
+                    navbar.style.top = "-70px";
+                }
+            });
+
+            window.onscroll = function() {
+                if (!isMouseOver) {
+                    let currentScrollPos = window.pageYOffset;
+                    if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
+                        navbar.style.top = "0";
+                    } else {
+                        navbar.style.top = "-70px";
+                    }
+                    prevScrollpos = currentScrollPos;
+                }
+            };
+        });
+    </script>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="FDZ"/>
+    <meta name="description" content="Practica html-css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos-web-p4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" size="32x32" href="/imgs/img-title.jpg">
+    <script src="https://kit.fontawesome.com/9a892fcb5a.js" crossorigin="anonymous"></script>
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="\parte 4\p-web.html">
+                <img src="/imgs/univallelogo.png">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="menu">
+           <!-- <li><i class="fa-solid fa-house" style="color: #333;"></i> <a href="\parte 4\p-web.html">Inicio</a></li>--> 
+            <li><i class="fa-solid fa-id-card-clip" style="color: #030000;"></i> <a href="\parte 3\index2p3.html">Sobre mi</a></li>
+            <li><i class="fa-solid fa-id-badge" style="color: #030000;"></i> <a href="/parte 3/indexp3.html">Aprendizajes</a></li>
+            <li><i class="fa-brands fa-github" style="color: #030000;"></i> <a href="/parte 4/index2p4.html">Proyectos</a></li>
+        </nav>
+    </header>
+
+    <main id="contenido-p">
+        <section class="slider">
+            <h2 class="titulo-1">
+                Bienvenido a mi portafolio
+            </h2>
+            <h3 class="titulo-2">
+                (proyecto de vida)
+            </h3>
+            <div class="button">
+                <a href="#contacto">
+                    ¿Cómo contactarme?
+                </a>
+            </div>
+            <div class="wave" style="height: 150px; overflow: hidden;">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M-43.16,91.30 C149.99,150.00 207.95,-23.17 500.00,49.98 L500.00,150.00 L-50.51,187.02 Z" style="stroke: none; fill: #fff;">
+                    </path>
+                </svg>
+            </div>
+        </section>
+
+        <section class="services" id="contacto">
+           <!-- <img src="/imgs/img-services.jpg" class="img-servicios">-->
+            <h2 class="titulo-secc2">
+                ¿Cómo contactarme?
+            </h2>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <h3>Teléfono</h3>
+                    <p class="text-secc2">
+                        <a href="tel:3137571115" class="contact-link">3137571115</a>
+                    </p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Correo</h3>
+                    <p class="text-secc2">
+                        <a href="mailto:felipe.penafiel@correounivalle.edu.co" class="contact-link">felipe.penafiel@correounivalle.edu.co</a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-hashtag contact-icon"></i>
+                    <h3>Redes Sociales</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dzz_nic?igsh=ZXQ5cjNmZHAxMTh5" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            dzz_nic
+                        </a>
+                        <a href="https://www.instagram.com/felipe_lzd?igsh=MW4xN2pqcWV3OWEyZQ==" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            felipe_lzd
+                        </a>
+                        <a href="https://x.com/dutycraft027?t=zX5wiZ3Uy8WSGbW8bmQyzw&s=08" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            dutycraft
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>
+            Todos los derechos de esta pagina reservados a Felipe Ramirez
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript para el menú hamburguesa
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

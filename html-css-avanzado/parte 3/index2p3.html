@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="FDZ"/>
+    <meta name="description" content="Practica html-css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/parte 3/cssp3/styles2p3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" size="32x32" href="/imgs/img-title.jpg">
+    <script src="https://kit.fontawesome.com/9a892fcb5a.js" crossorigin="anonymous"></script>
+    <title>Sobre mi</title>
+</head>
+<body>
+    <header class="header" id="navbar">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/imgs/univallelogo.png">
+            </a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="menu">
+            <li><i class="fa-solid fa-house"></i> <a href="/parte 4/p-web.html">Inicio</a></li>
+            <li><i class="fa-solid fa-id-badge"></i> <a href="/parte 3/indexp3.html">Aprendizajes</a></li>
+            <li><i class="fa-brands fa-github"></i> <a href="/parte 4/index2p4.html">Proyectos</a></li>
+            <li><i class="fa-solid fa-address-book"></i> <a href="/parte 4/p-web.html#contacto">Contacto</a></li>
+        </nav>
+    </header>
+
+    <main id="contenido-p">
+        <section class="sobre-mi" id="sobre-mi">
+            <div class="profile-container">
+                <div class="profile-content">
+                    <h2>Sobre mí</h2>
+                    <h3 class="subtitle">Estudiante de TEDESOFT / Frontend Dev  / Autodidacta</h3>
+                    <div class="bio-text">
+                        <p>¡Hola! Soy Felipe, un apasionado de la tecnología y el desarrollo web desde que tengo memoria. Mi curiosidad por el mundo digital me llevó a completar mi primer curso de desarrollo front end a los 12 años, una experiencia que me hizo decidir de una vez por todas lo que queria estudiar.</p>
+                        <p>Actualmente, me encuentro estudiando desarrollo de software en la universidad del valle, esto para mejorar mi enfoque en el desarrollo de aplicativos y paginas web.</p>
+                    </div>
+                    
+                    <div class="interests-section">
+                        <h3>I ❤</h3>
+                        <div class="interests-list">
+                            <span class="highlight">Escuchar musica</span>, <span class="highlight">Crear paginas web</span>, <span class="highlight">Ciberseguridad</span>, <span class="highlight">Informatica forense</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <h3>Bio</h3>
+
+                        <div class="timeline-item">
+                            <span class="year">2024-2 - presente</span>
+                            <div class="timeline-content">
+                                <h4>Estudiante de TEDESOFT</h4>
+                                <p>Universidad del valle</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2024-1</span>
+                            <div class="timeline-content">
+                                <h4>Completé mi bachiller técnico</h4>
+                                <p>Especializado en electricidad y electrónica</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2007</span>
+                            <div class="timeline-content">
+                                <h4>Nacimiento</h4>
+                                <p>Llegue a este mundo en el mes de diciembre 🐈</p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Todos los derechos de esta pagina reservados a Felipe Ramirez</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let prevScrollpos = window.pageYOffset;
+            const navbar = document.getElementById("navbar");
+            let isMouseOver = false;
+
+            navbar.addEventListener("mouseenter", function() {
+                isMouseOver = true;
+                navbar.style.top = "0";
+            });
+
+            navbar.addEventListener("mouseleave", function() {
+                isMouseOver = false;
+                if (window.pageYOffset > 100) {
+                    navbar.style.top = "-70px";
+                }
+            });
+
+            window.onscroll = function() {
+                if (!isMouseOver) {
+                    let currentScrollPos = window.pageYOffset;
+                    if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
+                        navbar.style.top = "0";
+                    } else {
+                        navbar.style.top = "-70px";
+                    }
+                    prevScrollpos = currentScrollPos;
+                }
+            };
+        });
+
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
